@@ -1,0 +1,22 @@
+{
+  "name": "file-upload",
+  "version": "0.0.1",
+  "description": "Return a JSON object with the size of the file uploaded in bytes.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadabmm/file-metadata.git"
+  },
+  "keywords": [
+    "Multer"
+  ],
+  "author": "SMM",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "multer": "^1.3.0"
+  }
+}

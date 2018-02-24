@@ -1,0 +1,1 @@
+## Return a JSON object with the size of the file uploaded in bytes.
