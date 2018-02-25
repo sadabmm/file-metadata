@@ -13,6 +13,7 @@
 <body>
     <div class="container">
         <h4>Upload a file to get the file size and extension as a JSON response.</h4>
+        <!-- The enctype MUST be mentioned which tells us the encoding type for the file upload. Without this the form doesn't work. -->
         <form action="/getFileInfo" method="POST" enctype="multipart/form-data">
             <div class="file-field input-field">
                 <div class="btn">
