@@ -17,19 +17,27 @@ var storage = multer.diskStorage({
 });
 */
 
-var storage = multer.memoryStorage()
+//The memory storage engine stores the files in memory as Buffer objects. It doesn't have any options.
+var storage = multer.memoryStorage();
 var upload = multer({ storage: storage }).single('myFile');
 
 app.post('/getFileInfo', function (req, res) {
 	upload(req, res, function(err) {
-	    var size = {
-	        size : req.file.size + ' bytes'
-	    };
-		res.json(size);
-		console.log(req.file);
+	    if(err){
+	        console.log('The file cannot be uploaded. Error: '+err);
+	    } else {
+	        var filetype = req.file.originalname;
+	        var extension = filetype.split('.')[1];
+	        var info = {
+	        "size" : req.file.size,
+	        "file extension": extension
+	        };
+		    res.json(info);
+		    console.log(req.file);
+	    }
 	});
 });
 
 app.listen(process.env.PORT, ()=>{
     console.log("This app is now listening on port: "+process.env.PORT);
-})
+});

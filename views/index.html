@@ -4,13 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
     <title>File Upload Info</title>
 </head>
 <body>
-    <h3>Upload a file.</h3>
-    <form action="/getFileInfo" method="post" enctype="multipart/form-data">
-        <input type="file" name="myFile">
-        <input type="submit">
-    </form>
+    <div class="container">
+        <h4>Upload a file to get the file size and extension as a JSON response.</h4>
+        <form action="/getFileInfo" method="POST" enctype="multipart/form-data">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>File</span>
+                    <input type="file" name="myFile">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path" type="text" placeholder="Select a file">
+                </div>
+            </div>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
 </body>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 </html>
